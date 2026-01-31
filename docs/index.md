@@ -1,7 +1,5 @@
 # How to Create a New Job
 
-Status: Not started
-
 Transform your hiring process with Fabric's AI-powered recruitment. This
 guide walks you through creating compelling job listings that attract
 top talent and streamline your screening process.
