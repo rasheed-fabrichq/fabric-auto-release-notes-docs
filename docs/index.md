@@ -25,10 +25,11 @@ All endpoints use the base URL:
 
 ### Key Features
 
-- **JWT Authentication** - Secure token-based auth with 24-hour expiry
-- **Password Reset** - Email-based password recovery
+- **JWT Authentication** - Secure token-based auth with 48-hour expiry
+- **Google OAuth** - OAuth2 authentication with Google
 - **Flexible Billing** - Four pricing tiers from Free to Enterprise
 - **Invoice Management** - Monthly invoices generated on the 1st
+- **Health Check** - API status monitoring endpoint
 
 ### Supported Environments
 
@@ -39,8 +40,9 @@ All endpoints use the base URL:
 
 ## Version History
 
-| Version | Date         | Changes                          |
-|---------|--------------|----------------------------------|
-| 2.0     | January 2026 | JWT auth, new billing tiers      |
-| 1.5     | October 2025 | Added password reset             |
-| 1.0     | July 2025    | Initial release with basic auth  |
+| Version | Date         | Changes                                                    |
+|---------|--------------|-------------------------------------------------------------|
+| 2.1     | January 2026 | Extended JWT to 48h, Google OAuth, updated pricing        |
+| 2.0     | January 2026 | JWT auth, new billing tiers                                |
+| 1.5     | October 2025 | Added password reset                                       |
+| 1.0     | July 2025    | Initial release with basic auth                            |

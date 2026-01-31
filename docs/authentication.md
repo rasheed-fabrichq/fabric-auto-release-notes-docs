@@ -30,7 +30,7 @@ in the Authorization header:
 ```json
 {
   "token": "eyJhbGciOiJIUzI1NiIs...",
-  "expiresIn": "24h",
+  "expiresIn": "48h",
   "tokenType": "Bearer"
 }
 ```
@@ -40,11 +40,11 @@ in the Authorization header:
 | Parameter            | Value          | Description                       |
 |----------------------|----------------|-----------------------------------|
 | Token Type           | Bearer         | Only Bearer tokens are supported  |
-| Expiry Duration      | 24 hours       | Tokens expire after 24 hours      |
+| Expiry Duration      | 48 hours       | Tokens expire after 48 hours      |
 | Algorithm            | HS256          | HMAC with SHA-256                 |
-| Max Login Attempts   | 5              | Account locks after 5 failures    |
+| Max Login Attempts   | 10             | Account locks after 10 failures   |
 | Lockout Duration     | 15 minutes     | Automatic unlock after 15 minutes |
-| Min Password Length  | 8 characters   | Minimum password requirement      |
+| Min Password Length  | 10 characters  | Minimum password requirement      |
 
 ## Refreshing a Token
 
@@ -53,24 +53,34 @@ Before your token expires, you can refresh it:
     POST /api/v2/auth/refresh
 
 Include the current valid token in the Authorization header. A new token will
-be returned with a fresh 24-hour expiry.
+be returned with a fresh 48-hour expiry.
 
-## Password Reset
+## Google OAuth Authentication
 
-To reset a forgotten password:
+SecureAPI supports Google OAuth for authentication:
 
-    POST /api/v2/auth/reset-password
+    POST /api/v2/auth/oauth/google
 
 **Request Body:**
 
 ```json
 {
-  "email": "user@example.com"
+  "googleToken": "ya29.a0AfH6SMB..."
 }
 ```
 
-A password reset link will be sent to the registered email address. The link
-expires after 1 hour.
+**Successful Response (200):**
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIs...",
+  "expiresIn": "48h",
+  "tokenType": "Bearer",
+  "provider": "google"
+}
+```
+
+The `googleToken` should be obtained from Google's OAuth flow. The returned JWT token works the same as standard login tokens.
 
 ## Error Codes
 
@@ -79,7 +89,6 @@ expires after 1 hour.
 | 401         | UNAUTHORIZED   | Missing or invalid token                      |
 | 403         | FORBIDDEN      | Token expired or insufficient permissions     |
 | 423         | ACCOUNT_LOCKED | Too many failed login attempts                |
-| 429         | RATE_LIMITED   | Too many requests, try again later            |
 
 ## Security Best Practices
 
