@@ -1,6 +1,8 @@
 # How to Create a New Job
 
 Status: Not started
+Last Updated: January 31, 2026 (PR #12)
+Version: 1.1
 
 Transform your hiring process with Fabric's AI-powered recruitment. This
 guide walks you through creating compelling job listings that attract
@@ -28,7 +30,7 @@ two flexible options:
 
 ### Option 1: File Upload
 
-Upload your job description as a PDF file directly.
+Upload your job description in multiple formats including PDF, DOC, or DOCX files directly.
 
 ### Option 2: Copy and Paste
 
@@ -92,10 +94,18 @@ changes, undesirable background profiles, or missing critical skills.
 Configure your AI Interview Assistant and the questions it will ask
 candidates.
 
+## Interview Format Selection
+
+Choose from three interview format options to match your hiring stage:
+
+- **Resume Discussion:** Focus on the candidate's background and experience
+- **Screening Interview:** Initial evaluation of qualifications and fit
+- **Round 1 Interview:** Comprehensive assessment for advancing candidates
+
 ## Quick Select Assistants
 
 Choose an AI personality for interviews. Fabric supports multiple
-languages and accents.
+languages and accents. The system will automatically switch to Fabric Alpha for advanced questions such as coding assessments when needed.
 
 Popular examples: - Anushka and Shubham for Indian English\
 - Rachel for US English\
@@ -176,6 +186,18 @@ Automatically reject candidates below minimum experience.
 Automatically reject candidates above maximum salary expectations.
 Salary range is not visible to candidates.
 
+### Resume Requirements
+
+Control whether candidates must submit a resume and whether resume screening is enabled. These settings can be configured independently:
+
+- **Require Resume:** Make resume submission mandatory for applications
+- **Resume Screening:** Enable AI-powered resume screening and evaluation
+
+### Interview Settings
+
+- **Interview Enabled:** Toggle to enable or disable interviews for this position
+- **Interview Reschedule Limit:** Set the maximum number of times candidates can reschedule their interviews
+
 ### Responsibilities
 
 Define core duties and responsibilities of the role.
@@ -191,6 +213,10 @@ Question types: - MCQ - Yes/No - Number - Free text
 Pre-interview questions can also be used as eligibility filters, such
 as: - Joining timeline - Relocation willingness - Portfolio link
 
+## Application Form Customization
+
+Control which information candidates provide during application. You can hide the entire application form or specific fields as needed to streamline your candidate experience.
+
 ------------------------------------------------------------------------
 
 # Step 6: Launch and Share
@@ -198,7 +224,11 @@ as: - Joining timeline - Relocation willingness - Portfolio link
 Finish your job listing to generate a shareable link.
 
 You can: - Post on job portals - Share directly with candidates - Bulk
-upload resumes for screening and AI interviews
+upload resumes for screening and AI interviews - Import multiple candidates at once using CSV file upload
+
+## Bulk Candidate Upload
+
+Use the CSV upload feature to import multiple candidates efficiently. This allows you to quickly add candidate information in bulk for screening and interview processing.
 
 ------------------------------------------------------------------------
 
@@ -206,6 +236,4 @@ upload resumes for screening and AI interviews
 
 Your job role and AI Interview assistant are now created.
 
-Fabric evaluates candidates using a scoring framework out of 10. By
-default, the resume screening score and AI interview assessment score
-are set to 7 and can be edited in the job settings.
+Fabric evaluates candidates using a scoring framework out of 10.
